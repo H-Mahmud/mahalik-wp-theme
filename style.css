@@ -13,3 +13,11 @@
  * Requires PHP:      7.4
  * License:           UNLICENSED
  */
+
+:root {
+  --font-main: 'Amazon-Ember';
+  --color-primary: #8f285f;
+  --color-primary-dark: #680138;
+  --color-primary-light: #b54e85;
+  --color-primary-reverse: #fff4ff;
+}
