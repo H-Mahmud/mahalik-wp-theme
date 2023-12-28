@@ -4,9 +4,10 @@ if (!function_exists('mahalik_archive_1_shortcode_callback')) {
 
     function mahalik_archive_1_shortcode_callback($attributes)
     {
-        $arg = shortcode_atts(array(
+        $attr = shortcode_atts(array(
             'category' => 'something',
             'title' => 'Best Seller',
+            'qty'   => 6
         ), $attributes);
 
         ob_start();
@@ -15,7 +16,7 @@ if (!function_exists('mahalik_archive_1_shortcode_callback')) {
             <salla-slider type="carousel" class="s-slider-wrapper carousel-slider s-slider-horizontal hydrated">
                 <div class="s-slider-block__title">
                     <div class="s-slider-block__title-right">
-                        <h2><?php echo $arg['title']; ?></h2>
+                        <h2><?php echo $attr['title']; ?></h2>
                     </div>
                     <div class="s-slider-block__title-left">
                         <div class="s-slider-block__title-nav">
@@ -44,7 +45,7 @@ if (!function_exists('mahalik_archive_1_shortcode_callback')) {
                     <div class="swiper-wrapper s-slider-swiper-wrapper" style="transition-duration: 0ms; transform: translate3d(740px, 0px, 0px);">
                         <?php $args = array(
                             'post_type'      => 'product',
-                            'posts_per_page' => 6,
+                            'posts_per_page' => $attr['qty'],
                             // 'meta_query'     => array(
                             //     array(
                             //         'key'   => '_featured',  // TODO: Replace with your actual custom field key for featured products
@@ -76,7 +77,7 @@ if (!function_exists('mahalik_archive_1_shortcode_callback')) {
                         ?>
                     </div>
                     <!-- <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span> -->
-                </div>->
+                </div>
             </salla-slider>
         </section>
 
