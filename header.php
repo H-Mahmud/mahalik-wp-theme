@@ -95,12 +95,12 @@
                             <i slot="icon" class="icon sicon-shopping-bag leading-none"></i>
                         </div>
                         <span class="s-cart-summary-count">
-                            <?php WC()->cart->get_cart_contents_count(); ?>
+                            <?php echo WC()->cart->get_cart_contents_count(); ?>
                         </span>
                         <p class="s-cart-summary-content"><span class="s-cart-summary-label">
                                 <?php _e('Basket', 'mahalik'); ?>
                             </span><b class="s-cart-summary-total">
-                                <?php WC()->cart->get_cart_total(); ?>
+                                <?php echo WC()->cart->get_cart_total(); ?>
                             </b></p>
                     </a>
                 </div>
