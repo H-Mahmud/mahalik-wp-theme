@@ -21,3 +21,8 @@
   --color-primary-light: #b54e85;
   --color-primary-reverse: #fff4ff;
 }
+
+/* Hide added to cart link on loop */
+.woocommerce a.added_to_cart {
+  display: none;
+}
