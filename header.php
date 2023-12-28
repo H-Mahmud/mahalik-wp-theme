@@ -4,6 +4,7 @@
 <head>
     <meta charset="<?php bloginfo('name'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <?php wp_head(); ?>
 </head>
 
 <body <?php body_class('color-mode-light rtl font-amazon-ember bg-white topnav-is-dark mainnav-is-light footer-is-dark has-breadcrumbs font-Amazon-Ember'); ?>>
