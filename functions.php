@@ -11,3 +11,4 @@ require(get_theme_file_path('inc/custom-fields.php'));
 // shortcodes
 require(get_theme_file_path('shortcodes/product-archive-slide-1.php'));
 require(get_theme_file_path('shortcodes/product-archive-latest.php'));
+require(get_theme_file_path('shortcodes/product-archive-recommended.php'));
