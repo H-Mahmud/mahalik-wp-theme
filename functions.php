@@ -1,5 +1,6 @@
 <?php
 // classes
+require(get_theme_file_path('classes/Nav-Walkers.php'));
 
 
 // Theme Functions
