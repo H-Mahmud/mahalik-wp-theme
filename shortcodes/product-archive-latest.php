@@ -1,6 +1,6 @@
 <?php
 add_shortcode('mahalik_product_latest', 'mahalik_product_latest_shortcode_callback');
-if (!function_exists('mahalik_archive_2_shortcode_callback')) {
+if (!function_exists('mahalik_product_latest_shortcode_callback')) {
 
     function mahalik_product_latest_shortcode_callback($attributes)
     {
