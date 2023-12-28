@@ -2,34 +2,37 @@
 add_action('wp_enqueue_scripts', 'mahalik_theme_enqueue_scripts', 10);
 if (!function_exists('mahalik_theme_enqueue_scripts')) {
 
-    /**
-     * Add Styles and scripts
-     */
-    function mahalik_theme_enqueue_scripts()
-    {
+  /**
+   * Add Styles and scripts
+   */
+  function mahalik_theme_enqueue_scripts()
+  {
 
-        wp_enqueue_style('app', get_theme_file_uri() . '/assets/salla.network/app.css', [], false, 'all');
-        wp_enqueue_style('amazon_ember',  get_theme_file_uri() . '/assets/salla.network/amazon_ember.css', [], false, 'all');
-        wp_enqueue_style('sallaicons',  get_theme_file_uri() . '/assets/salla.network/sallaicons.css', [], false, 'all');
+    wp_enqueue_style('app', get_theme_file_uri() . '/assets/salla.network/app.css', [], false, 'all');
+    wp_enqueue_style('amazon_ember',  get_theme_file_uri() . '/assets/salla.network/amazon_ember.css', [], false, 'all');
+    wp_enqueue_style('sallaicons',  get_theme_file_uri() . '/assets/salla.network/sallaicons.css', [], false, 'all');
 
-        wp_enqueue_style('style', get_stylesheet_uri(), [], time(), 'all'); // TODO: add a static version by removing time()
-    }
+    wp_enqueue_style('style', get_stylesheet_uri(), [], time(), 'all'); // TODO: add a static version by removing time()
+
+    wp_enqueue_script('swiper', get_stylesheet_directory_uri() . '/assets/js/swiper-bundle.min.js', [], false, false);
+    wp_enqueue_script('script', get_stylesheet_directory_uri() . '/assets/js/script.js', [], time(), true);
+  }
 }
 
 add_action('wp_enqueue_scripts', 'mahalik_theme_inline_style', 10);
 if (!function_exists('mahalik_theme_inline_style')) {
-    /**
-     * Add Theme Fonts and Icons
-     */
-    function mahalik_theme_inline_style()
-    {
-        $font_url_rg_wff2 = get_theme_file_uri() . '/assets/fonts/AmazonEmberArabic_Rg.woff2';
-        $font_url_rg_wff = get_theme_file_uri() . '/assets/fonts/AmazonEmberArabic_Rg.woff';
+  /**
+   * Add Theme Fonts and Icons
+   */
+  function mahalik_theme_inline_style()
+  {
+    $font_url_rg_wff2 = get_theme_file_uri() . '/assets/fonts/AmazonEmberArabic_Rg.woff2';
+    $font_url_rg_wff = get_theme_file_uri() . '/assets/fonts/AmazonEmberArabic_Rg.woff';
 
-        $font_url_bd_wff2 = get_theme_file_uri() . '/assets/fonts/AmazonEmberArabic_Bd.woff2';
-        $font_url_bd_wff = get_theme_file_uri() . '/assets/fonts/AAmazonEmberArabic_Bd.woff';
+    $font_url_bd_wff2 = get_theme_file_uri() . '/assets/fonts/AmazonEmberArabic_Bd.woff2';
+    $font_url_bd_wff = get_theme_file_uri() . '/assets/fonts/AAmazonEmberArabic_Bd.woff';
 
-        $amazon_ember_css = "
+    $amazon_ember_css = "
     @font-face {
         font-family: Amazon-Ember;
         src: url($font_url_rg_wff2) format('woff2'),
@@ -59,13 +62,13 @@ if (!function_exists('mahalik_theme_inline_style')) {
     ";
 
 
-        $url_icon_eot = get_theme_file_uri() . '/assets/fonts/sallaicons.eot';
-        $url_icon_eot_iefix = get_theme_file_uri() . '/assets/fonts/sallaicons.eot?bd897m-2#iefix';
-        $url_icon_ttf = get_theme_file_uri() . '/assets/fonts/sallaicons.ttf';
-        $url_icon_woff = get_theme_file_uri() . '/assets/fonts/sallaicons.woff';
-        $url_icon_svg = get_theme_file_uri() . '/assets/fonts/sallaicons.svg';
+    $url_icon_eot = get_theme_file_uri() . '/assets/fonts/sallaicons.eot';
+    $url_icon_eot_iefix = get_theme_file_uri() . '/assets/fonts/sallaicons.eot?bd897m-2#iefix';
+    $url_icon_ttf = get_theme_file_uri() . '/assets/fonts/sallaicons.ttf';
+    $url_icon_woff = get_theme_file_uri() . '/assets/fonts/sallaicons.woff';
+    $url_icon_svg = get_theme_file_uri() . '/assets/fonts/sallaicons.svg';
 
-        $sallaicons_css = "
+    $sallaicons_css = "
     @font-face {
         font-family: sallaicons;
         src: url($url_icon_eot);
@@ -79,8 +82,8 @@ if (!function_exists('mahalik_theme_inline_style')) {
         font-display: block;
       }
     ";
-        wp_add_inline_style('style', $amazon_ember_css . $sallaicons_css);
-    }
+    wp_add_inline_style('style', $amazon_ember_css . $sallaicons_css);
+  }
 }
 
 
