@@ -4,7 +4,18 @@
         <a href="<?php the_permalink(); ?>">
             <?php echo get_the_post_thumbnail(get_the_ID(), 'medium_large', ['class' => 'h-full w-full transition-opacity hover:opacity-90 object-contain lazy loaded']); ?>
         </a>
-        <div class="promotion-badge  max-w-[calc(100%-60px)]">صابونية عرق السوس مجاناً </div>
+        <?php
+        if ($product->is_on_sale()) :
+            $regular_price = $product->get_regular_price();
+            $sale_price = $product->get_sale_price();
+
+            if ($regular_price && $sale_price) {
+                $percentage = round((($regular_price - $sale_price) / $regular_price) * 100);
+                echo '<div class="promotion-badge has-discount max-w-[calc(100%-60px)]">' . $percentage . '% ' . __('off', 'mahalik') . '</div>';
+            }
+
+        endif; ?>
+
     </div>
     <div class="content-wrap donating-wrap ">
         <div class="product-entry__content">
