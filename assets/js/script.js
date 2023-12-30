@@ -69,4 +69,25 @@ jQuery(document).ready(function ($) {
       hideSignInModal();
     }
   });
+
+  /**
+   * Single Product Page
+   *
+   */
+  $(document).on('click', '.single-product .increase-qty', function (event) {
+    const qty = $('.single-product [name="quantity"]');
+
+    console.log(qty);
+    qty.val(parseInt(qty.val()) + 1);
+  });
+
+  /**
+   * Single Product Page
+   *
+   */
+  $(document).on('click', '.single-product .decrease-qty', function (event) {
+    qty = $('.single-product [name="quantity"]');
+    if (!parseInt(qty.val())) return;
+    qty.val(parseInt(qty.val()) - 1);
+  });
 });

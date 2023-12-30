@@ -21,8 +21,11 @@ if (!defined('ABSPATH')) {
 }
 
 get_header('shop'); ?>
-<div class="bg-gray-50">
+
+
+<div class="bg-gray-50 single-product">
     <div class="container page-container product-details ">
+
         <nav class="breadcrumbs w-full py-5 breadcrumbs--">
             <?php
             /**
@@ -33,7 +36,10 @@ get_header('shop'); ?>
              */
             do_action('woocommerce_before_main_content');
             ?>
-            <!-- <ol class="flex items-center flex-wrap text-sm">
+
+            <?php
+            /* Need to implement the markup on single page breadcrumb
+            <ol class="flex items-center flex-wrap text-sm">
                 <li class="whitespace-nowrap"><a href="https://lamsah.co/ar/">
                         <font style="vertical-align: inherit;">
                             <font style="vertical-align: inherit;">Main</font>
@@ -66,10 +72,11 @@ get_header('shop'); ?>
                     </span></li>
                 <li><span>
                         <font style="vertical-align: inherit;">
-                            <font style="vertical-align: inherit;">Nacific Gold Moisturizing Set</font>
+                            <font style="vertical-align: inherit;">Moisturizing and unifying skin tone set</font>
                         </font>
                     </span></li>
-            </ol> -->
+            </ol>
+            */ ?>
         </nav>
 
         <?php while (have_posts()) : ?>
@@ -79,20 +86,17 @@ get_header('shop'); ?>
 
         <?php endwhile; // end of the loop. 
         ?>
-
-        <?php
-        /**
-         * woocommerce_after_main_content hook.
-         *
-         * @hooked woocommerce_output_content_wrapper_end - 10 (outputs closing divs for the content)
-         */
-        do_action('woocommerce_after_main_content');
-        ?>
-
     </div>
 </div>
 
-
+<?php
+/**
+ * woocommerce_after_main_content hook.
+ *
+ * @hooked woocommerce_output_content_wrapper_end - 10 (outputs closing divs for the content)
+ */
+do_action('woocommerce_after_main_content');
+?>
 <?php
 get_footer('shop');
 
