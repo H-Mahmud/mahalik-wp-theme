@@ -37,4 +37,39 @@ jQuery(document).ready(function ($) {
   $(document).on('change', '.cart_item input.qty', function () {
     updateTheCart();
   });
+
+  /**
+   * User sign modal handler
+   *
+   */
+
+  function hideSignInModal() {
+    $('#sign-in-modal').fadeOut();
+  }
+  function showSignInModal() {
+    $('#sign-in-modal').fadeIn();
+  }
+
+  $(document).on('click', function (event) {
+    if (
+      event.target.tagName === 'A' &&
+      event.target.getAttribute('href') === '#sign-in'
+    ) {
+      showSignInModal();
+    }
+  });
+
+  $(document).on('click', '.sign-in-close', function (e) {
+    hideSignInModal();
+  });
+
+  // Close the modal if clicked outside of it
+  $(document).on('click', function (event) {
+    if (
+      !$(event.target).closest('#sign-in-modal .s-modal-body').length &&
+      event.target.tagName === 'DIV'
+    ) {
+      hideSignInModal();
+    }
+  });
 });

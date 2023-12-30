@@ -40,3 +40,7 @@
   margin-right: 0.25rem;
   display: inline-flex !important;
 }
+
+#sign-in-modal {
+  display: none;
+}
