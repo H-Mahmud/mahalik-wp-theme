@@ -29,7 +29,7 @@ $string = '
             <i class="text-[16px] sicon-shopping"></i>
             %s
         </span>
-        <span class="s-button-loader s-button-loader-center s-infinite-scroll-btn-loader"></span>
+        <span class="s-button-loader add-to-cart-loader s-button-loader-center s-infinite-scroll-btn-loader"></span>
     </span>
 </a>
 ';
