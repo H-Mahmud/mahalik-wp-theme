@@ -75,18 +75,13 @@ jQuery(document).ready(function ($) {
    *
    */
   $(document).on('click', '.single-product .increase-qty', function (event) {
-    const qty = $('.single-product [name="quantity"]');
-
-    console.log(qty);
+    const qty = $(this).siblings('.s-quantity-input-input');
+    if (!qty.val()) return qty.val(1);
     qty.val(parseInt(qty.val()) + 1);
   });
 
-  /**
-   * Single Product Page
-   *
-   */
   $(document).on('click', '.single-product .decrease-qty', function (event) {
-    qty = $('.single-product [name="quantity"]');
+    const qty = $(this).siblings('.s-quantity-input-input');
     if (!parseInt(qty.val())) return;
     qty.val(parseInt(qty.val()) - 1);
   });
