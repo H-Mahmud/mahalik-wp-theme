@@ -22,7 +22,21 @@
   --color-primary-reverse: #fff4ff;
 }
 
-/* Hide added to cart link on loop */
-.woocommerce a.added_to_cart {
-  display: none;
+.woocommerce a.remove {
+  height: 1.5rem !important;
+  width: 1.5rem !important;
+  font-size: 0.75rem !important;
+  border-width: 1px !important;
+  --tw-border-opacity: 1;
+  border-color: rgba(248, 113, 113, var(--tw-border-opacity)) !important;
+  --tw-bg-opacity: 1;
+  background-color: rgba(248, 113, 113, var(--tw-bg-opacity)) !important;
+  fill: #fff !important;
+  --tw-text-opacity: 1;
+  color: rgba(255, 255, 255, var(--tw-text-opacity)) !important;
+
+  position: relative !important;
+  margin-left: 0.25rem !important;
+  margin-right: 0.25rem;
+  display: inline-flex !important;
 }
