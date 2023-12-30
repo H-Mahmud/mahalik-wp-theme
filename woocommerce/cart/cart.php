@@ -195,7 +195,7 @@ do_action('woocommerce_before_cart'); ?>
 
         </div>
         <?php do_action('woocommerce_after_cart_table'); ?>
-        <div>
+        <div style="display: none;">
 
             <?php if (wc_coupons_enabled()) { ?>
                 <div class="coupon">
