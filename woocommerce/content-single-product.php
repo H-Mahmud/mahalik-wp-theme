@@ -205,6 +205,12 @@ if (post_password_required()) {
     </div>
 </div>
 
+</div>
+</div>
+<!-- Opened from singe-product.php -->
+<div class="container">
+</div>
+
 <?php
 /**
  * Hook: woocommerce_after_single_product_summary.

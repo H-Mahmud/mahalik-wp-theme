@@ -7,3 +7,5 @@ remove_action('woocommerce_single_product_summary', 'woocommerce_template_single
 // remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30);
 remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40);
 remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_sharing', 50);
+
+remove_action('woocommerce_after_single_product_summary', 'woocommerce_upsell_display', 10);
