@@ -36,7 +36,7 @@
                             <p class="s-cart-summary-content"><span class="s-cart-summary-label">
                                     <?php _e('Basket', 'mahalik'); ?>
                                 </span><b class="s-cart-summary-total">
-                                    <?php echo WC()->cart->get_cart_contents_total(); ?>
+                                    <?php echo wc_price(WC()->cart->get_cart_contents_total()); ?>
                                 </b></p>
                         </a>
                     </div>
