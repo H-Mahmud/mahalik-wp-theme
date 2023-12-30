@@ -44,3 +44,23 @@
 #sign-in-modal {
   display: none;
 }
+
+.btn--add-to-cart .added_to_cart {
+  display: none !important;
+}
+.btn--add-to-cart .loading.s-button-primary-outline:hover {
+  background-color: #fff;
+  border: 1px solid var(--color-primary-reverse);
+
+  fill: var(--color-primary);
+  color: var(--color-primary);
+  border-width: 1px;
+  border-color: currentColor;
+}
+
+.btn--add-to-cart .s-button-text .s-button-loader {
+  display: none;
+}
+.btn--add-to-cart a.loading .s-button-text .s-button-loader {
+  display: block;
+}
