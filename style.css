@@ -64,3 +64,15 @@
 a.loading .s-button-text .s-button-loader.add-to-cart-loader {
   display: block;
 }
+
+/** Single Product page */
+.product-slider .swiper-container {
+  overflow: hidden;
+}
+.product-slider .swiper-wrapper {
+  height: 100%;
+}
+
+.product-slider .swiper-wrapper .swiper-slide img {
+  height: 100%;
+}
