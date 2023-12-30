@@ -51,10 +51,7 @@ jQuery(document).ready(function ($) {
   }
 
   $(document).on('click', function (event) {
-    if (
-      event.target.tagName === 'A' &&
-      event.target.getAttribute('href') === '#sign-in'
-    ) {
+    if (event.target.getAttribute('modal-view') === 'sign-in') {
       showSignInModal();
     }
   });

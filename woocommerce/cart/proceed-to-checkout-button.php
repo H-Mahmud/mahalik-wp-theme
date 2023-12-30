@@ -33,9 +33,9 @@ if (!defined('ABSPATH')) {
 	</div>
 <?php else : ?>
 	<div type="button">
-		<a href="#sign-in" class="undefined s-button-element s-button-btn s-button-solid s-button-wide s-button-primary s-button-loader-center wc-forward<?php echo esc_attr(wc_wp_theme_get_element_class_name('button') ? ' ' . wc_wp_theme_get_element_class_name('button') : ''); ?>"><span class="s-button-text">
+		<button modal-view="sign-in" class="undefined s-button-element s-button-btn s-button-solid s-button-wide s-button-primary s-button-loader-center wc-forward<?php echo esc_attr(wc_wp_theme_get_element_class_name('button') ? ' ' . wc_wp_theme_get_element_class_name('button') : ''); ?>"><span class="s-button-text">
 				<?php esc_html_e('Proceed to checkout', 'woocommerce'); ?>
 			</span></a>
-		</a>
+		</button>
 	</div>
 <?php endif; ?>

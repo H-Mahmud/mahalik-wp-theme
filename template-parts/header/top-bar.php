@@ -6,10 +6,10 @@
                     <?php if (is_user_logged_in()) :
                         get_template_part('template-parts/header/menu', 'account');
                     else : ?>
-                        <button class="topnav-link-item" onclick="window.location.href = '<?php echo wc_get_account_endpoint_url(''); ?>';" aria-label="Login">
-                            <i class="icon sicon-user"></i>
+                        <button class="topnav-link-item" modal-view="sign-in">
+                            <i class="icon sicon-user" modal-view="sign-in"></i>
                             <div class="hidden lg:flex flex-col leading-none text-sm text-start">
-                                <span class="flex leading-none text-sm">
+                                <span class="flex leading-none text-sm" modal-view="sign-in">
                                     <?php _e('sign in', 'mahalik'); ?>
                                 </span>
                             </div>
