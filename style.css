@@ -45,7 +45,7 @@
   display: none;
 }
 
-.btn--add-to-cart .added_to_cart {
+.added_to_cart {
   display: none !important;
 }
 .btn--add-to-cart .loading.s-button-primary-outline:hover {
