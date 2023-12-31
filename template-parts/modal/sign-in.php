@@ -27,23 +27,32 @@
                     </div>
                 </div>
             </div>
+
+
             <div class="s-login-modal-wrapper">
                 <div class="s-login-modal-tab s-show s-login-modal-active" data-name="login-email">
                     <label class="s-login-modal-label"><?php _e('E-mail', 'mahalik'); ?></label>
                     <form method="POST">
                         <input type="email" placeholder="your@email.com" class="s-login-modal-input s-ltr">
+                        <!-- <span class="s-login-modal-error-message s-hide">* تأكد من صحة البريد الإلكتروني</span> -->
                         <salla-button class="s-login-modal-enter-button s-button-wrap hydrated" type="button">
-                            <button class="s-login-modal-enter-button s-button-element s-button-btn s-button-solid s-button-wide s-button-primary s-button-loader-center" loader-position="center" type="button"><span class="s-button-text"><?php _e('Submit', 'mahalik'); ?></span></button>
+                            <button class="s-login-modal-enter-button s-button-element s-button-btn s-button-solid s-button-wide s-button-primary s-button-loader-center" type="button"><span class="s-button-text"><?php _e('Submit', 'mahalik'); ?></span></button>
                         </salla-button>
                     </form>
                 </div>
-                <salla-verify support-web-auth="true" class="s-hidden hydrated" data-name="otp">
-                    <!---->
+
+
+                <salla-verify class="s-hidden hydrated" data-name="otp">
                     <div class="s-verify-body">
-                        <div class="s-verify-message">رقم التحقق مطلوب لاكمال العملية<br> لقد تم إرسال رمز التحقق فى رسالة إليكم</div>
+                        <div class="s-verify-message"><?php _e('The verification number is required to complete the process', 'mahalik'); ?><br><?php _e('A verification code has been sent to you in a message', 'mahalik'); ?></div>
                         <div dir="ltr" class="s-login-modal-currentEmail" slot="email"></div>
                         <input type="hidden" name="code" maxlength="4" required="">
-                        <div class="s-verify-codes" dir="ltr"><input type="number" autocomplete="one-time-code" pattern="[0-9]*" inputmode="numeric" maxlength="1" id="otp-1" class="s-verify-input" required=""><input type="number" autocomplete="one-time-code" pattern="[0-9]*" inputmode="numeric" maxlength="1" id="otp-2" class="s-verify-input" required=""><input type="number" autocomplete="one-time-code" pattern="[0-9]*" inputmode="numeric" maxlength="1" id="otp-3" class="s-verify-input" required=""><input type="number" autocomplete="one-time-code" pattern="[0-9]*" inputmode="numeric" maxlength="1" id="otp-4" class="s-verify-input" required=""></div>
+                        <div class="s-verify-codes" dir="ltr">
+                            <input type="number" autocomplete="one-time-code" pattern="[0-9]*" inputmode="numeric" maxlength="1" id="otp-1" class="s-verify-input" required="">
+                            <input type="number" autocomplete="one-time-code" pattern="[0-9]*" inputmode="numeric" maxlength="1" id="otp-2" class="s-verify-input" required="">
+                            <input type="number" autocomplete="one-time-code" pattern="[0-9]*" inputmode="numeric" maxlength="1" id="otp-3" class="s-verify-input" required="">
+                            <input type="number" autocomplete="one-time-code" pattern="[0-9]*" inputmode="numeric" maxlength="1" id="otp-4" class="s-verify-input" required="">
+                        </div>
                         <div slot="footer" class="s-verify-footer">
                             <salla-button class="s-verify-submit s-button-wrap hydrated" loader-position="center" shape="btn" color="primary" fill="solid" size="medium" width="normal" disabled="" type="button">
                                 <!----><button class="s-verify-submit s-button-element s-button-btn s-button-solid s-button-primary s-button-disabled s-button-loader-center" loader-position="center" type="button" disabled=""><span class="s-button-text">تحقق</span></button>
@@ -60,9 +69,17 @@
                         </a>
                     </div>
                 </salla-verify>
+
+
                 <div data-name="registration" class="s-hidden">
-                    <div><label class="s-login-modal-label">اسمك الكريم</label><input type="text" class="s-login-modal-input" placeholder="الاسم الأول"><span class="s-login-modal-error-message"></span></div>
-                    <div><label class="s-login-modal-label">الاسم الأخير</label><input type="text" class="s-login-modal-input" placeholder="الاسم الأخير"><span class="s-login-modal-error-message"></span></div>
+                    <div>
+                        <label class="s-login-modal-label">اسمك الكريم</label>
+                        <input type="text" class="s-login-modal-input" placeholder="الاسم الأول"><span class="s-login-modal-error-message"></span>
+                    </div>
+                    <div>
+                        <label class="s-login-modal-label">الاسم الأخير</label>
+                        <input type="text" class="s-login-modal-input" placeholder="الاسم الأخير"><span class="s-login-modal-error-message"></span>
+                    </div>
                     <div class="mb-1.5">
                         <label class="s-login-modal-label">رقم الجوال</label>
                         <salla-tel-input class="s-tel-input hydrated">
@@ -93,6 +110,7 @@
                         <!----><button loader-position="center" type="button" class="undefined s-button-element s-button-btn s-button-solid s-button-wide s-button-primary s-button-loader-center"><span class="s-button-text">التسجيل</span></button>
                     </salla-button>
                 </div>
+
             </div>
         </div>
     </div>
