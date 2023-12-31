@@ -53,18 +53,29 @@ defined('ABSPATH') || exit;
                     // Convert the gallery images string to an array
                     $gallery_images = explode(',', $gallery_images);
 
+                    $image_id = get_post_thumbnail_id($product_id);
+
+                    echo '<div class="woocommerce-product-gallery">';
+                    $image_url = wp_get_attachment_url($image_id);
+                    $image_alt = get_post_meta($image_id, '_wp_attachment_image_alt', true);
+                    echo '<img src="' . esc_url($image_url) . '" alt="' . esc_attr($image_alt) . '" style="object-fit: contain" class="h-full w-full ">';
+
+                    echo '</div>';
+
                     // Output the gallery
-                    if ($gallery_images) {
-                        foreach ($gallery_images as $image_id) {
+                    // if ($gallery_images) {
+                    //     foreach ($gallery_images as $image_id) {
 
-                            echo '<div class="woocommerce-product-gallery">';
-                            $image_url = wp_get_attachment_url($image_id);
-                            $image_alt = get_post_meta($image_id, '_wp_attachment_image_alt', true);
-                            echo '<img src="' . esc_url($image_url) . '" alt="' . esc_attr($image_alt) . '" style="object-fit: contain" class="h-full w-full ">';
+                    //         echo '<div class="woocommerce-product-gallery">';
+                    //         $image_url = wp_get_attachment_url($image_id);
+                    //         $image_alt = get_post_meta($image_id, '_wp_attachment_image_alt', true);
+                    //         echo '<img src="' . esc_url($image_url) . '" alt="' . esc_attr($image_alt) . '" style="object-fit: contain" class="h-full w-full ">';
 
-                            echo '</div>';
-                        }
-                    } ?>
+                    //         echo '</div>';
+                    //     }
+                    // } 
+
+                    ?>
                 </div>
             </div>
 
@@ -74,17 +85,19 @@ defined('ABSPATH') || exit;
 
                         <?php
                         // Output the gallery
-                        if ($gallery_images) {
-                            foreach ($gallery_images as $image_id) {
+                        // if ($gallery_images) {
+                        //     foreach ($gallery_images as $image_id) {
 
-                                echo '<div class="swiper-slide swiper-slide-visible ">';
-                                $image_url = wp_get_attachment_url($image_id);
-                                $image_alt = get_post_meta($image_id, '_wp_attachment_image_alt', true);
-                                echo '<img src="' . esc_url($image_url) . '" alt="' . esc_attr($image_alt) . '" style="object-fit: contain" class="h-full w-full " class="w-full h-full object-cover">';
+                        //         echo '<div class="swiper-slide swiper-slide-visible ">';
+                        //         $image_url = wp_get_attachment_url($image_id);
+                        //         $image_alt = get_post_meta($image_id, '_wp_attachment_image_alt', true);
+                        //         echo '<img src="' . esc_url($image_url) . '" alt="' . esc_attr($image_alt) . '" style="object-fit: contain" class="h-full w-full " class="w-full h-full object-cover">';
 
-                                echo '</div>';
-                            }
-                        } ?>
+                        //         echo '</div>';
+                        //     }
+                        // } 
+
+                        ?>
 
                     </div>
                     <div class="s-slider-thumbs-nav">
