@@ -30,48 +30,48 @@
 
 
             <div class="s-login-modal-wrapper">
-                <div class="s-login-modal-tab s-show s-login-modal-active" data-name="login-email">
+                <div class="s-login-modal-tab modal-tab" data-name="login-email">
                     <label class="s-login-modal-label"><?php _e('E-mail', 'mahalik'); ?></label>
                     <form method="POST">
                         <input type="email" placeholder="your@email.com" class="s-login-modal-input s-ltr">
                         <!-- <span class="s-login-modal-error-message s-hide">* تأكد من صحة البريد الإلكتروني</span> -->
-                        <salla-button class="s-login-modal-enter-button s-button-wrap hydrated" type="button">
-                            <button class="s-login-modal-enter-button s-button-element s-button-btn s-button-solid s-button-wide s-button-primary s-button-loader-center" type="button"><span class="s-button-text"><?php _e('Submit', 'mahalik'); ?></span></button>
+                        <salla-button class="s-login-modal-enter-button s-button-wrap hydrated">
+                            <button class="s-login-modal-enter-button s-button-element s-button-btn s-button-solid s-button-wide s-button-primary s-button-loader-center" type="submit"><span class="s-button-text"><?php _e('Submit', 'mahalik'); ?></span></button>
                         </salla-button>
                     </form>
                 </div>
 
 
-                <salla-verify class="s-hidden hydrated" data-name="otp">
+                <form class="s-hidden hydrated modal-tab" data-name="otp">
                     <div class="s-verify-body">
                         <div class="s-verify-message"><?php _e('The verification number is required to complete the process', 'mahalik'); ?><br><?php _e('A verification code has been sent to you in a message', 'mahalik'); ?></div>
-                        <div dir="ltr" class="s-login-modal-currentEmail" slot="email"></div>
+                        <div dir="ltr" class="s-login-modal-currentEmail" slot="email">your@email.com</div>
                         <input type="hidden" name="code" maxlength="4" required="">
                         <div class="s-verify-codes" dir="ltr">
-                            <input type="number" autocomplete="one-time-code" pattern="[0-9]*" inputmode="numeric" maxlength="1" id="otp-1" class="s-verify-input" required="">
-                            <input type="number" autocomplete="one-time-code" pattern="[0-9]*" inputmode="numeric" maxlength="1" id="otp-2" class="s-verify-input" required="">
-                            <input type="number" autocomplete="one-time-code" pattern="[0-9]*" inputmode="numeric" maxlength="1" id="otp-3" class="s-verify-input" required="">
-                            <input type="number" autocomplete="one-time-code" pattern="[0-9]*" inputmode="numeric" maxlength="1" id="otp-4" class="s-verify-input" required="">
+                            <input type="number" oninput="moveToNextOTP(this)" pattern="[0-9]*" max="9" min="0" class="s-verify-input" id="box1" required>
+                            <input type="number" oninput="moveToNextOTP(this)" pattern="[0-9]*" max="9" min="0" class="s-verify-input" id="box2" required>
+                            <input type="number" oninput="moveToNextOTP(this)" pattern="[0-9]*" max="9" min="0" class="s-verify-input " id="box3" required>
+                            <input type="number" oninput="moveToNextOTP(this)" pattern="[0-9]*" max="9" min="0" class="s-verify-input " id="box4" required>
                         </div>
                         <div slot="footer" class="s-verify-footer">
-                            <salla-button class="s-verify-submit s-button-wrap hydrated" loader-position="center" shape="btn" color="primary" fill="solid" size="medium" width="normal" disabled="" type="button">
-                                <!----><button class="s-verify-submit s-button-element s-button-btn s-button-solid s-button-primary s-button-disabled s-button-loader-center" loader-position="center" type="button" disabled=""><span class="s-button-text">تحقق</span></button>
+                            <salla-button class="s-verify-submit s-button-wrap hydrated">
+                                <!-- <button class="s-verify-submit s-button-element s-button-btn s-button-solid s-button-primary s-button-disabled s-button-loader-center"><span class="s-button-text">تحقق</span></button> -->
+                                <button type="submit" class="s-verify-submit s-button-element s-button-btn s-button-solid s-button-primary  s-button-loader-center"><span class="s-button-text">تحقق</span></button>
                             </salla-button>
                             <p class="s-verify-resend-message">يمكنك إعادة الإرسال بعد<b class="s-verify-timer"></b></p>
                             <a href="javascript:void(0);" class="s-verify-resend">إرسال</a>
                         </div>
                         <a class="s-verify-back" slot="after-footer" href="javascript:void(0);">
-                            <!-- Generated by IcoMoon.io -->
                             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
                                 <title>arrow-right</title>
                                 <path d="M29.217 15.465c-0.019-0.044-0.056-0.077-0.080-0.119-0.067-0.116-0.139-0.227-0.236-0.317-0.011-0.009-0.013-0.024-0.024-0.033l-10.667-9.333c-0.553-0.484-1.396-0.429-1.881 0.125-0.484 0.555-0.428 1.396 0.127 1.881l7.996 6.997h-20.452c-0.737 0-1.333 0.597-1.333 1.333s0.596 1.333 1.333 1.333h20.452l-7.996 6.997c-0.555 0.485-0.611 1.327-0.127 1.881 0.264 0.3 0.633 0.455 1.004 0.455 0.312 0 0.625-0.109 0.877-0.331l10.667-9.333c0.011-0.009 0.015-0.024 0.024-0.033 0.097-0.091 0.169-0.201 0.236-0.317 0.024-0.041 0.060-0.075 0.080-0.119 0.073-0.163 0.116-0.343 0.116-0.533s-0.043-0.371-0.116-0.535z"></path>
                             </svg>
                         </a>
                     </div>
-                </salla-verify>
+                </form>
 
 
-                <div data-name="registration" class="s-hidden">
+                <div data-name="registration" class="s-hidden modal-tab">
                     <div>
                         <label class="s-login-modal-label">اسمك الكريم</label>
                         <input type="text" class="s-login-modal-input" placeholder="الاسم الأول"><span class="s-login-modal-error-message"></span>
@@ -115,3 +115,77 @@
         </div>
     </div>
 </salla-modal>
+
+<script>
+    function moveToNextOTP(currentInput) {
+        // Get the value entered in the current input box
+        const currentValue = currentInput.value;
+
+        console.log(currentInput);
+
+        // Move to the next input box if there is a value
+        if (currentValue) {
+            const nextInputId = currentInput.id.replace(/\D/g, '') + 1; // Get the next input box ID
+            const nextInput = document.getElementById('box' + nextInputId);
+
+            if (nextInput) {
+                nextInput.focus(); // Move focus to the next input box
+            }
+        }
+    }
+
+    jQuery(document).ready(function($) {
+        $modalAllTab = $('#sign-in-modal .modal-tab');
+
+        $loginModal = $('#sign-in-modal [data-name="login-email"]');
+        $otpModal = $('#sign-in-modal [data-name="otp"]');
+        $registerModal = $('#sign-in-modal [data-name="registration"]');
+
+        // data-name="login-email"
+        // data-name="otp"
+        // data-name="registration"
+        $loginModal.find('form').on('submit', function(event) {
+            event.preventDefault();
+
+            $modalAllTab.hide();
+            $otpModal.fadeIn();
+
+            console.log('submited')
+
+            // Send AJAX request
+            // $.ajax({
+            //     type: 'POST',
+            //     url: ajax_object.ajax_url,
+            //     data: {
+            //         action: 'send_opt_code',
+            //         email: userEmail,
+            //     },
+            //     success: function(response) {
+            //         $('#optResult').html(response);
+            //     },
+            // });
+        });
+
+        $otpModal.on('submit', function(event) {
+            event.preventDefault();
+
+            $modalAllTab.hide();
+            $registerModal.fadeIn();
+
+            console.log('submited')
+
+            // Send AJAX request
+            // $.ajax({
+            //     type: 'POST',
+            //     url: ajax_object.ajax_url,
+            //     data: {
+            //         action: 'send_opt_code',
+            //         email: userEmail,
+            //     },
+            //     success: function(response) {
+            //         $('#optResult').html(response);
+            //     },
+            // });
+        });
+    });
+</script>
