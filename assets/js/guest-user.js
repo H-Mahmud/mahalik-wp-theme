@@ -99,6 +99,7 @@ jQuery(document).ready(function ($) {
   $otpModal = $('#sign-in-modal [data-name="otp"]');
   $registerModal = $('#sign-in-modal [data-name="registration"]');
 
+  let timer;
   /**
    *
    * Submit Email
@@ -115,7 +116,7 @@ jQuery(document).ready(function ($) {
       .show()
       .find('.s-verify-timer')
       .html(countdown);
-    const timer = setInterval(function () {
+    timer = setInterval(function () {
       countdown--;
       $('.s-verify-timer').html(countdown);
       if (countdown <= 0) {
@@ -291,6 +292,7 @@ jQuery(document).ready(function ($) {
     $loginModal.fadeIn();
     $modalAllTab.find('input').val('');
     $('.s-verify-error-message').hide();
+    clearInterval(timer);
   });
 });
 
