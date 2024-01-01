@@ -16,6 +16,11 @@ if (!function_exists('mahalik_theme_enqueue_scripts')) {
 
     wp_enqueue_script('swiper', get_stylesheet_directory_uri() . '/assets/js/swiper-bundle.min.js', [], false, false);
     wp_enqueue_script('script', get_stylesheet_directory_uri() . '/assets/js/script.js', [], time(), true);
+
+    if (!is_user_logged_in()) {
+      wp_enqueue_script('guest-user', get_stylesheet_directory_uri() . '/assets/js/guest-user.js', [], time(), true);
+      wp_localize_script('guest-user', 'ajax_object', array('ajax_url' => admin_url('admin-ajax.php'), 'nonce' => wp_create_nonce('send_opt_email_nonce')));
+    }
   }
 }
 
