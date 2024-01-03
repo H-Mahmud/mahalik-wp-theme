@@ -46,10 +46,19 @@ if (post_password_required()) {
     ?>
     <div class="main-content">
         <div class="general-products-info">
-            <a class="product-brand w-12 mb-2 block" title="<?php echo $product->get_attribute('pa_brand'); ?>">
-                <!-- <img class="max-h-full object-contain" src="https://cdn.salla.sa/RwEnq/OCXxaVw6ATutdpL2Y9NZPhAmREJi8lLanuGwswZ6.png" title="Nature's Answer |  Natures Answer" alt="Nature's Answer |  Natures Answer"> TODO: add brand image -->
-                <?php echo $product->get_attribute('pa_brand'); ?>
-            </a>
+            <?php
+
+            if ($product->get_attribute('pa_brand')) {
+                $brand_term_id = $product->get_attributes()['pa_brand']->get_options()[0];
+
+                $brand_term_image_id = get_term_meta($brand_term_id, 'product_attribute_image', true);
+            ?>
+
+
+                <a href="<?php echo get_tag_link($brand_term_id); ?>" class="product-brand w-12 mb-2 block" title="<?php echo $product->get_attribute('pa_brand'); ?>">
+                    <img class="max-h-full object-contain" src="<?php echo wp_get_attachment_image_url($brand_term_image_id); ?>" title="<?php echo $product->get_attribute('pa_brand'); ?>" alt="<?php echo $product->get_attribute('pa_brand'); ?>">
+                </a>
+            <?php } ?>
             <div>
                 <?php the_title('<h1 class="text-2xl lg:text-3xl font-bold text-gray-800">', '</h1>'); ?>
                 <h3 class="product-entry__sub-title">
