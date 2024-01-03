@@ -20,14 +20,7 @@ defined('ABSPATH') || exit;
 
 get_header();
 
-/**
- * Hook: woocommerce_before_main_content.
- *
- * @hooked woocommerce_output_content_wrapper - 10 (outputs opening divs for the content)
- * @hooked woocommerce_breadcrumb - 20
- * @hooked WC_Structured_Data::generate_website_data() - 30
- */
-// do_action('woocommerce_before_main_content');
+
 
 ?>
 <header class="page-header h-32 lg:h-52   has-overlay--before   has-overlay--light  has-overlay--opacity-option has-overlay--opacity-70" style="
@@ -36,7 +29,7 @@ get_header();
    color: #ffffff;">
     <nav class="breadcrumbs w-full py-5 breadcrumbs--inherit-color">
         <ol class="flex items-center flex-wrap text-sm">
-            <li class="whitespace-nowrap"><a href="https://lamsah.co/ar/">Main</a></li>
+            <!-- <li class="whitespace-nowrap"><a href="<?php echo home_url(); ?>"><?php _e('Main', 'mahalik'); ?></a></li> -->
             <!-- <li><span class="arrow ltr:-scale-x-100 inline-block mx-2">
 
                 </span></li>
@@ -49,7 +42,17 @@ get_header();
             <li><span>
                     Moisturizing the body
                 </span></li> -->
-        </ol>
+            <!-- </ol> -->
+            <?php
+            /**
+             * Hook: woocommerce_before_main_content.
+             *
+             * @hooked woocommerce_output_content_wrapper - 10 (outputs opening divs for the content)
+             * @hooked woocommerce_breadcrumb - 20
+             * @hooked WC_Structured_Data::generate_website_data() - 30
+             */
+            do_action('woocommerce_before_main_content');
+            ?>
     </nav>
 </header>
 
@@ -59,32 +62,23 @@ get_header();
         <div class="main-content flex-1 w-full ">
             <div class="mb-4 sm:mb-6 flex justify-between items-center">
                 <h1 id="page-title" class="font-bold text-xl rtl:pl-3 ltr:pr-3">
-                    Body care | Moisturizing the body
+                    <!-- Body care | Moisturizing the body -->
+                    <?php // do_action('woocommerce_before_main_content'); 
+                    ?>
                 </h1>
-                <div class="flex items-center space-x-2 rtl:space-x-reverse">
-                    <div class="flex items-center">
-                        <label class="hidden sm:block rtl:ml-3 ltr:mr-3 whitespace-nowrap" for="product-filter">
-                            ranking
-                        </label>
-                        <select id="product-filter" class="form-input pt-0 pb-1 rtl:md:pl-10 ltr:md:pr-10">
-                            <option value="ourSuggest">
-                                Our proposals
-                            </option>
-                            <option value="bestSell">
-                                best seller
-                            </option>
-                            <option value="topRated">
-                                Highest rated
-                            </option>
-                            <option value="priceFromTopToLow">
-                                Price from high to low
-                            </option>
-                            <option value="priceFromLowToTop">
-                                Price from low to high
-                            </option>
-                        </select>
-                    </div>
-                </div>
+
+
+                <?php
+
+                /**
+                 * Hook: woocommerce_before_shop_loop.
+                 *
+                 * @hooked woocommerce_output_all_notices - 10
+                 * @hooked woocommerce_result_count - 20
+                 * @hooked woocommerce_catalog_ordering - 30
+                 */
+                do_action('woocommerce_before_shop_loop');
+                ?>
             </div>
             <div class="flex">
                 <div class="flex-1 min-w-0 overflow-auto s-products-list hydrated">
@@ -97,25 +91,44 @@ get_header();
                                 </custom-salla-product-card>
 
                         <?php endwhile;
+
+                            woocommerce_product_loop_end();
+
+                            /**
+                             * Hook: woocommerce_after_shop_loop.
+                             *
+                             * @hooked woocommerce_pagination - 10
+                             */
+                            do_action('woocommerce_after_shop_loop');
+
                         else :
                             echo '<h3>' . __('No product found', 'mahalik') . '</h3>';
                         endif; ?>
 
                     </div>
 
-                    <div class="s-infinite-scroll-status">
+
+                    <?php /* <div class="s-infinite-scroll-status">
                         <p class="s-infinite-scroll-last infinite-scroll-last s-hidden"> </p>
                         <p class="s-infinite-scroll-error infinite-scroll-error s-hidden">
                             Could not fetch more😢
                         </p>
                     </div>
 
-                    <div class="s-products-list-loading-wrapper" style="display: none;"><span class="s-button-loader s-button-loader-center s-infinite-scroll-btn-loader"></span></div>
+                    <div class="s-products-list-loading-wrapper" style="display: none;"><span class="s-button-loader s-button-loader-center s-infinite-scroll-btn-loader"></span>
+                    </div>
 
-                    <div class="s-infinite-scroll-wrapper" style="display: block;"><button class="s-infinite-scroll-btn s-button-btn s-button-primary"><span class="s-button-text s-infinite-scroll-btn-text">
+                    <div class="s-infinite-scroll-wrapper" style="display: block;">
+                        <button class="s-infinite-scroll-btn s-button-btn s-button-primary">
+                            <span class="s-button-text s-infinite-scroll-btn-text">
                                 Load more
-                            </span><span class="s-button-loader s-button-loader-center s-infinite-scroll-btn-loader" style="display: none;"></span></button></div>
+                            </span>
+                            <span class="s-button-loader s-button-loader-center s-infinite-scroll-btn-loader" style="display: none;"></span>
+                        </button>
+                    </div> */ ?>
+
                 </div>
+
             </div>
         </div>
     </div>
