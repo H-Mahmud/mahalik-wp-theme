@@ -1,4 +1,5 @@
 <?php get_header('checkout'); ?>
+
 <style>
     :root {
         --color-primary: #821b52;
@@ -13,8 +14,8 @@
     }
 </style>
 
-<div id="app" class="container container--margined">
 
+<div id="app" class="container container--margined">
     <?php if (have_posts()) :
         while (have_posts()) : the_post();
             the_content();
