@@ -7,6 +7,7 @@ require(get_theme_file_path('classes/Nav-Walkers.php'));
 require(get_theme_file_path('inc/setup-theme.php'));
 require(get_theme_file_path('inc/theme-resources.php'));
 require(get_theme_file_path('inc/custom-fields.php'));
+require(get_theme_file_path('inc/theme-functions.php'));
 
 // WooCommerce Customize
 require(get_theme_file_path('inc/single-product-customize.php'));
