@@ -10,7 +10,7 @@ require(get_theme_file_path('inc/custom-fields.php'));
 require(get_theme_file_path('inc/theme-functions.php'));
 
 // WooCommerce Customize
-require(get_theme_file_path('inc/single-product-customize.php'));
+require(get_theme_file_path('inc/wc-customize.php'));
 require(get_theme_file_path('inc/user-auth-ajax.php'));
 
 // shortcodes
