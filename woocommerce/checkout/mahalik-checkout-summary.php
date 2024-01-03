@@ -63,9 +63,11 @@
         ?>
         <li class="proceed">
             <div>
-                <button id="submit-form-btn" type="submit" class="btn btn--primary btn--wide btn--round btn--submit btn--fixed wide">
-                    <span><?php _e('Payment Confirmation', 'mahalik'); ?></span>
-                </button>
+                <?php
+
+                $order_submit_button_text =  __('Payment Confirmation', 'mahalik');
+                echo apply_filters('woocommerce_order_button_html', '<button type="submit" class="btn btn--primary btn--wide btn--round btn--submit btn--fixed wide button alt' . esc_attr(wc_wp_theme_get_element_class_name('button') ? ' ' . wc_wp_theme_get_element_class_name('button') : '') . '" name="woocommerce_checkout_place_order" id="place_order" value="' . esc_attr($order_submit_button_text) . '" data-value="' . esc_attr($order_submit_button_text) . '"><span>' . esc_html($order_submit_button_text) . '</span></button>'); // @codingStandardsIgnoreLine 
+                ?>
             </div>
         </li>
     </ul>
