@@ -15,8 +15,9 @@
             </span>
         </li> -->
 
-        <?php if (WC()->cart->tax_display_cart === 'excl' || WC()->cart->tax_display_cart === 'incl') :
-        /*
+        <?php
+        /*  if (WC()->cart->tax_display_cart === 'excl' || WC()->cart->tax_display_cart === 'incl') :
+       
             $subtotal = WC()->cart->get_subtotal();
             $tax =  WC()->cart->get_total_tax();
 
@@ -30,7 +31,7 @@
 
                 </span>
             </li>
-        <?php */ endif; ?>
+        <?php endif;*/  ?>
 
         <?php
         if (WC()->cart->applied_coupons) : ?>
