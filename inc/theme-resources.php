@@ -50,7 +50,7 @@ function iconic_remove_woo_styles()
 // add_action('wp_enqueue_scripts', 'iconic_remove_woo_styles', 20);
 
 
-add_action('wp_enqueue_scripts', 'mahalik_theme_inline_style', 10);
+add_action('wp_enqueue_scripts', 'mahalik_theme_inline_style', 99999);
 if (!function_exists('mahalik_theme_inline_style')) {
   /**
    * Add Theme Fonts and Icons
