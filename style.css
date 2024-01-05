@@ -76,3 +76,38 @@ a.loading .s-button-text .s-button-loader.add-to-cart-loader {
 .product-slider .swiper-wrapper .swiper-slide img {
   height: 100%;
 }
+
+/** Checkout page */
+#add_payment_method #payment,
+.woocommerce-cart #payment,
+.woocommerce-checkout #payment {
+  background: #fff;
+  margin-bottom: 30px;
+}
+.woocommerce-checkout #payment ul.payment_methods {
+  border-bottom: unset;
+}
+
+#add_payment_method #payment ul.payment_methods li,
+.woocommerce-cart #payment ul.payment_methods li,
+.woocommerce-checkout #payment ul.payment_methods li {
+  margin: 8px !important;
+}
+
+#add_payment_method #payment div.payment_box,
+.woocommerce-cart #payment div.payment_box,
+.woocommerce-checkout #payment div.payment_box {
+  background-color: #fff;
+}
+#add_payment_method #payment div.payment_box,
+.woocommerce-cart #payment div.payment_box,
+.woocommerce-checkout #payment div.payment_box::before {
+  content: unset;
+}
+
+#place_order {
+  color: var(--color-primary-l) !important;
+}
+.wc_payment_methods .wc_payment_method input[name='payment_method'] {
+  display: none;
+}

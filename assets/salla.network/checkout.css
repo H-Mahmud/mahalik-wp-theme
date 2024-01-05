@@ -8418,14 +8418,14 @@ body.landing-page-body .quick-order .form-group .form-control {
 .btn--submit.wide:after {
   background-size: cover;
   color: var(--color-text-reverse);
-  content: '';
+  content: '➜';
   display: inline-block;
   font-family: sallaicons;
   height: 13px;
   left: 15px;
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translateY(-50%) rotate(180deg);
   width: 15px;
 }
 

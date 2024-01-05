@@ -1,5 +1,5 @@
 <?php
-add_action('wp_enqueue_scripts', 'mahalik_theme_enqueue_scripts', 10);
+add_action('wp_enqueue_scripts', 'mahalik_theme_enqueue_scripts', 99999);
 if (!function_exists('mahalik_theme_enqueue_scripts')) {
 
   /**
@@ -24,18 +24,31 @@ if (!function_exists('mahalik_theme_enqueue_scripts')) {
 
     if (is_page('checkout')) {
       wp_enqueue_style('bootstrap',  get_theme_file_uri() . '/assets/salla.network/bootstrap.css', [], false, 'all');
-      wp_enqueue_style('checkout',  get_theme_file_uri() . '/assets/salla.network/checkout.css', [], false, 'all');
       wp_enqueue_style('pingarlt',  get_theme_file_uri() . '/assets/salla.network/pingarlt.css', [], false, 'all');
+      wp_enqueue_style('checkout',  get_theme_file_uri() . '/assets/salla.network/checkout.css', [], false, 'all');
 
       wp_deregister_style('app');
       wp_deregister_style('amazon_ember');
       wp_deregister_style('sallaicons');
-      wp_deregister_style('style');
+      // wp_deregister_style('style');
       wp_deregister_style('swiper');
       wp_deregister_style('script');
     }
   }
 }
+
+
+// Unregister WooCommerce styles for the checkout page
+function iconic_remove_woo_styles()
+{
+  if (is_checkout()) {
+    wp_dequeue_style('woocommerce-layout');
+    wp_dequeue_style('woocommerce-smallscreen');
+    wp_dequeue_style('woocommerce-general');
+  }
+}
+// add_action('wp_enqueue_scripts', 'iconic_remove_woo_styles', 20);
+
 
 add_action('wp_enqueue_scripts', 'mahalik_theme_inline_style', 10);
 if (!function_exists('mahalik_theme_inline_style')) {

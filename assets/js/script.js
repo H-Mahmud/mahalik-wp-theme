@@ -85,4 +85,19 @@ jQuery(document).ready(function ($) {
     if (!parseInt(qty.val())) return;
     qty.val(parseInt(qty.val()) - 1);
   });
+
+  /**
+   * Checkout page payment option
+   *
+   */
+
+  $(document).on(
+    'click',
+    '.wc_payment_methods .wc_payment_method label',
+    function (event) {
+      $('.wc_payment_methods .wc_payment_method label').removeClass('active');
+
+      $(this).addClass('active');
+    }
+  );
 });

@@ -7,5 +7,5 @@
     <?php wp_head(); ?>
 </head>
 
-<body <?php body_class('woocommerce-block-theme-has-button-styles color-mode-light rtl font-amazon-ember bg-white topnav-is-dark mainnav-is-light footer-is-dark has-breadcrumbs font-Amazon-Ember'); ?>>
+<body <?php body_class('woocommerce-block-theme-has-button-styles body'); ?>>
     <?php wp_body_open(); ?>

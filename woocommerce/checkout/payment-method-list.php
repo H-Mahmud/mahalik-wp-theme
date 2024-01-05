@@ -23,7 +23,7 @@ if (!defined('ABSPATH')) {
 <li class="wc_payment_method payment_method_<?php echo esc_attr($gateway->id); ?>">
     <input id="payment_method_<?php echo esc_attr($gateway->id); ?>" type="radio" class="input-radio" name="payment_method" value="<?php echo esc_attr($gateway->id); ?>" <?php checked($gateway->chosen, true); ?> data-order_button_text="<?php echo esc_attr($gateway->order_button_text); ?>" />
 
-    <label class="btn btn--round btn--payment-option" for="payment_method_<?php echo esc_attr($gateway->id); ?>">
+    <label class="btn btn--round btn--payment-option <?php echo $gateway->chosen ? 'active' : ''; ?> " for="payment_method_<?php echo esc_attr($gateway->id); ?>">
         <img src="https://cdn.assets.salla.network/stores/vendor/checkout/images/icons/pay-option-tabby_en.png?v=0.0.1" alt="Tabby" />
 
         <?php echo $gateway->get_title(); /* phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped */ ?> <?php echo $gateway->get_icon(); /* phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped */ ?>
