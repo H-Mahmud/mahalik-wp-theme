@@ -89,3 +89,8 @@ if (!function_exists('mahalik_remove_checkout_fields')) {
         return $fields;
     }
 }
+
+/**
+ * Remove Coupon apply from checkout
+ */
+remove_action('woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_form', 10);
