@@ -53,7 +53,9 @@
                     'depth'                => 1,
                     'walker'               => new Mahalik_TopBar_Nav_Walker(),
                     'theme_location'       => 'top_bar_menu',
-                )); ?>
+                ));
+
+                ?>
             </div>
         </div>
     </div>

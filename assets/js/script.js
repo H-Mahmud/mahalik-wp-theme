@@ -1,5 +1,16 @@
 jQuery(document).ready(function ($) {
   /**
+   * Header Menu bar
+   */
+  $(document).on('click', '.open-mobile-menu', function () {
+    $('body').addClass('menu-is-open');
+  });
+
+  $(document).on('click', '.close-mobile-menu', function () {
+    $('body').removeClass('menu-is-open');
+  });
+
+  /**
    * Cart Qty and coupon update
    */
   const updateTheCart = () => {

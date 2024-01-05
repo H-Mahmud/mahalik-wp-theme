@@ -9,7 +9,6 @@
 
 <body <?php body_class('woocommerce-block-theme-has-button-styles color-mode-light rtl font-amazon-ember bg-white topnav-is-dark mainnav-is-light footer-is-dark has-breadcrumbs font-Amazon-Ember'); ?>>
     <?php wp_body_open(); ?>
-
     <header class="store-header" style="height: 154px;">
         <?php get_template_part('template-parts/header/top', 'bar'); ?>
 
@@ -17,7 +16,7 @@
             <div class="overlay-layer has-overlay--after"></div>
             <div class="container flex items-center flex-wrap lg:flex-nowrap">
                 <div class="flex justify-start lg:justify-center items-center rtl:ml-10 ltr:mr-10">
-                    <button aria-label="Open Menu" class="lg:hidden mburger mburger--collapse cursor-pointer rtl:ml-3 ltr:mr-3 bg-transparent border-none">
+                    <button aria-label="Open Menu" class="open-mobile-menu lg:hidden mburger mburger--collapse cursor-pointer rtl:ml-3 ltr:mr-3 bg-transparent border-none">
                         <i class="sicon-menu text-2xl"></i>
                     </button>
                     <a class="navbar-brand" href="<?php echo home_url(); ?>">
