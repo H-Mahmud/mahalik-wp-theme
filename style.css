@@ -139,3 +139,7 @@ a.loading .s-button-text .s-button-loader.add-to-cart-loader {
 .woocommerce-SavedPaymentMethods-saveNew label {
   padding: 10px;
 }
+
+.woocommerce-billing-fields__field-wrapper .row {
+  align-items: flex-end;
+}

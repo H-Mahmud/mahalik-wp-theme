@@ -66,26 +66,31 @@ defined('ABSPATH') || exit;
                 // echo $key;
                 // echo "<br/>";
             }
+            // $billing_country =  $fields['billing_country'];
+            // $billing_country['class'][] = 'form-group';
+            // $billing_country['input_class'][] = 'form-control';
+            // woocommerce_form_field('billing_country', $billing_country, $checkout->get_value('billing_country'));
+
+            // $billing_state =  $fields['billing_state'];
+            // $billing_state['class'][] = 'form-group';
+            // $billing_state['input_class'][] = 'form-control';
+            // woocommerce_form_field('billing_state', $billing_state, $checkout->get_value('billing_state'));
 
             ?>
-
             <div class="row">
-                <div class="col-md-6">
-                    <?php
-                    $billing_country =  $fields['billing_country'];
-                    $billing_country['class'][] = 'form-group';
-                    $billing_country['input_class'][] = 'form-control';
-                    woocommerce_form_field('billing_country', $billing_country, $checkout->get_value('billing_country'));
-                    ?>
-                </div>
-                <div class="col-md-6">
-                    <?php
-                    $billing_state =  $fields['billing_state'];
-                    $billing_state['class'][] = 'form-group';
-                    $billing_state['input_class'][] = 'form-control';
-                    woocommerce_form_field('billing_state', $billing_state, $checkout->get_value('billing_state'));
-                    ?>
-                </div>
+                <?php
+                $billing_country =  $fields['billing_country'];
+                $billing_country['class'][] = 'col-md-6';
+                $billing_country['input_class'][] = 'form-control';
+                woocommerce_form_field('billing_country', $billing_country, $checkout->get_value('billing_country'));
+
+
+                $billing_state =  $fields['billing_state'];
+                $billing_state['class'][] = 'col-md-6';
+                $billing_state['input_class'][] = 'form-control';
+                woocommerce_form_field('billing_state', $billing_state, $checkout->get_value('billing_state'));
+                ?>
+
             </div>
 
             <div class="row">
@@ -125,6 +130,8 @@ defined('ABSPATH') || exit;
                     ?>
                 </div>
             </div>
+
+
             <?php do_action('woocommerce_after_checkout_billing_form', $checkout); ?>
         </div>
 

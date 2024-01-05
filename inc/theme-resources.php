@@ -22,7 +22,7 @@ if (!function_exists('mahalik_theme_enqueue_scripts')) {
       wp_localize_script('guest-user', 'ajax_object', array('ajax_url' => admin_url('admin-ajax.php'), 'nonce' => wp_create_nonce('send_opt_email_nonce')));
     }
 
-    if (is_page('checkout')) {
+    if (is_page('checkout') &&  !is_order_received_page()) {
       wp_enqueue_style('bootstrap',  get_theme_file_uri() . '/assets/salla.network/bootstrap.css', [], false, 'all');
       wp_enqueue_style('pingarlt',  get_theme_file_uri() . '/assets/salla.network/pingarlt.css', [], false, 'all');
       wp_enqueue_style('checkout',  get_theme_file_uri() . '/assets/salla.network/checkout.css', [], false, 'all');

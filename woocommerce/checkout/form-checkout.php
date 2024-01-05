@@ -54,8 +54,7 @@ if (!$checkout->is_registration_enabled() && $checkout->is_registration_required
                                 <div class="form form--options-edit" id="customer_details">
                                     <?php do_action('woocommerce_checkout_billing'); ?>
 
-                                    <?php // do_action('woocommerce_checkout_shipping'); 
-                                    ?>
+                                    <?php do_action('woocommerce_checkout_shipping'); ?>
                                 </div>
 
                                 <?php do_action('woocommerce_checkout_after_customer_details'); ?>
