@@ -62,10 +62,69 @@ defined('ABSPATH') || exit;
             $fields = $checkout->get_checkout_fields('billing');
 
             foreach ($fields as $key => $field) {
-                woocommerce_form_field($key, $field, $checkout->get_value($key));
+                // woocommerce_form_field($key, $field, $checkout->get_value($key));
+                // echo $key;
+                // echo "<br/>";
             }
+
             ?>
 
+            <div class="row">
+                <div class="col-md-6">
+                    <?php
+                    $billing_country =  $fields['billing_country'];
+                    $billing_country['class'][] = 'form-group';
+                    $billing_country['input_class'][] = 'form-control';
+                    woocommerce_form_field('billing_country', $billing_country, $checkout->get_value('billing_country'));
+                    ?>
+                </div>
+                <div class="col-md-6">
+                    <?php
+                    $billing_state =  $fields['billing_state'];
+                    $billing_state['class'][] = 'form-group';
+                    $billing_state['input_class'][] = 'form-control';
+                    woocommerce_form_field('billing_state', $billing_state, $checkout->get_value('billing_state'));
+                    ?>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <?php
+                    $billing_city =  $fields['billing_city'];
+                    $billing_city['class'][] = 'form-group';
+                    $billing_city['input_class'][] = 'form-control';
+                    woocommerce_form_field('billing_city', $billing_city, $checkout->get_value('billing_city'));
+                    ?>
+                </div>
+                <div class="col-md-6">
+                    <?php
+                    $billing_postcode =  $fields['billing_postcode'];
+                    $billing_postcode['class'][] = 'form-group';
+                    $billing_postcode['input_class'][] = 'form-control';
+                    woocommerce_form_field('billing_postcode', $billing_postcode, $checkout->get_value('billing_postcode'));
+                    ?>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <?php
+                    $billing_address_1 =  $fields['billing_address_1'];
+                    $billing_address_1['class'][] = 'form-group';
+                    $billing_address_1['input_class'][] = 'form-control';
+                    woocommerce_form_field('billing_address_1', $billing_address_1, $checkout->get_value('billing_address_1'));
+                    ?>
+                </div>
+                <div class="col-md-6">
+                    <?php
+                    $billing_address_2 =  $fields['billing_address_2'];
+                    $billing_address_2['class'][] = 'form-group';
+                    $billing_address_2['input_class'][] = 'form-control';
+                    woocommerce_form_field('billing_address_2', $billing_address_2, $checkout->get_value('billing_address_2'));
+                    ?>
+                </div>
+            </div>
             <?php do_action('woocommerce_after_checkout_billing_form', $checkout); ?>
         </div>
 
