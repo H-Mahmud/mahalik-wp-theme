@@ -10,6 +10,25 @@ jQuery(document).ready(function ($) {
     $('body').removeClass('menu-is-open');
   });
 
+  /** DEsktop Menu */
+  $(document).on('click', '.s-user-menu-trigger', function () {
+    if ($('.s-user-menu-toggler').hasClass('opened')) {
+      $('.s-user-menu-toggler').removeClass('opened');
+      return;
+    }
+
+    console.log('clicked');
+    $('.s-user-menu-toggler').addClass('opened');
+  });
+
+  $(document).on('click', function (event) {
+    if (
+      !$(event.target).closest('.opened').length &&
+      !$(event.target).closest('.s-user-menu-trigger').length
+    ) {
+      $('.s-user-menu-toggler').removeClass('opened');
+    }
+  });
   /**
    * Cart Qty and coupon update
    */

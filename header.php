@@ -40,7 +40,7 @@
                     <div class="inner bg-inherit">
                         <?php
                         if (is_user_logged_in()) : ?>
-
+                            <?php get_template_part('template-parts/header/mobile-menu-account', 'account'); ?>
                         <?php else : ?>
                             <div class="flex lg:hidden" modal-view="sign-in">
                                 <a class="header-icon-button !mx-0 w-full text-white close-mobile-menu" modal-view="sign-in">
