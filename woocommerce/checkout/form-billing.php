@@ -48,7 +48,7 @@ defined('ABSPATH') || exit;
 <?php do_action('woocommerce_before_checkout_billing_form', $checkout); ?>
 
 <div id="national_address_form">
-    <div id="shipping_fields_wrapper woocommerce-billing-fields__field-wrapper">
+    <div id="woocommerce-billing-fields__field-wrapper">
         <div>
             <?php /*
             <div id="address_options" class="tabs-head">
