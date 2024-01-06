@@ -36,29 +36,27 @@
                 </div>
                 <button class="close-menu close-mobile-menu sicon-cancel lg:hidden" aria-label="Close Menu"></button>
                 <div id="main-menu-wrap" class="side-panel side-panel--mobile-menu rtl:ml-auto ltr:mr-auto grow">
-                    <div class="menu-fixed-bar">
-                        <button type="button" class="btn--gray rounded grow basis-0">
-                            <span class="flag iti__flag iti__sa rtl:ml-1.5 ltr:mr-1.5 rounded"></span>
-                            <span class="rtl:mr-2 ltr:ml-2 rtl:ml-1 ltr:mr-1 ltr:border-l ltr:pl-2.5 rtl:border-r rtl:pr-2.5 border-gray-400/20">
-                                Rs
-                            </span>
-                        </button>
-                    </div>
+
                     <div class="inner bg-inherit">
-                        <div class="flex lg:hidden">
-                            <a class="header-icon-button !mx-0 w-full text-white close-mobile-menu">
-                                <i class="icon sicon-user"></i>
-                                <div class="text">
-                                    <span>
-                                        <?php _e('Arithmetic', 'mahalik'); ?>
-                                    </span>
-                                    <span>
-                                        <?php _e('sign in', 'mahalik'); ?>
-                                    </span>
-                                </div>
-                                <span class="sicon-keyboard_arrow_left rtl:mr-auto ltr:ml-auto"></span>
-                            </a>
-                        </div>
+                        <?php
+                        if (is_user_logged_in()) : ?>
+
+                        <?php else : ?>
+                            <div class="flex lg:hidden" modal-view="sign-in">
+                                <a class="header-icon-button !mx-0 w-full text-white close-mobile-menu" modal-view="sign-in">
+                                    <i class="icon sicon-user"></i>
+                                    <div class="text">
+                                        <span>
+                                            <?php _e('Arithmetic', 'mahalik'); ?>
+                                        </span>
+                                        <span>
+                                            <?php _e('sign in', 'mahalik'); ?>
+                                        </span>
+                                    </div>
+                                    <span class="sicon-keyboard_arrow_left rtl:mr-auto ltr:ml-auto"></span>
+                                </a>
+                            </div>
+                        <?php endif; ?>
                         <h2 class="menu-title lg:hidden p-3 text-sm font-normal opacity-50">
                             <?php _e('main menu', 'mahalik'); ?>
                         </h2>
