@@ -37,14 +37,11 @@
         </div>
         <div class="add-to-cart-conatiner flex items-center mt-auto min-h-[50px] xs:pt-5  text-gray-600 gap-2.5 lg:gap-4">
             <div class="btn--add-to-cart hydrated">
-                <?php echo do_shortcode('[add_to_cart id="' . get_the_ID() . '" show_price="false" style="" class="s-button-wrap hydrated"]');
+                <?php
+                echo do_shortcode('[add_to_cart id="' . get_the_ID() . '" show_price="false" style="" class="s-button-wrap hydrated"]');
                 ?>
             </div>
-            <salla-button shape="icon" fill="outline" color="light" aria-label="Add or remove to wishlist" class="btn--wishlist heart-next-add-button animated s-button-wrap hydrated" size="medium" width="normal" type="button">
-                <!----><button shape="icon" aria-label="Add or remove to wishlist" class="btn--wishlist heart-next-add-button animated s-button-element s-button-icon s-button-outline s-button-light-outline s-button-loader-center" data-id="1558219261" type="button"><span class="s-button-text">
-                        <i class="sicon-heart"></i>
-                    </span></button>
-            </salla-button>
+            <?php echo do_shortcode('[ti_wishlists_addtowishlist]'); ?>
         </div>
     </div>
 </div>

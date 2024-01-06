@@ -130,4 +130,29 @@ jQuery(document).ready(function ($) {
       $(this).addClass('active');
     }
   );
+
+  /**
+   * Product Add favorite animation
+   *
+   */
+  $(document).on(
+    'click',
+    '.btn--wishlist .tinvwl_add_to_wishlist_button',
+    function (event) {
+      console.log('clicked');
+      if ($(event.target).hasClass('tinvwl-product-make-remove')) {
+        $(event.target)
+          .closest('.btn--wishlist')
+          .addClass('is-unactive un-favorited');
+        $(event.target)
+          .closest('.btn--wishlist')
+          .removeClass('is-active pulse');
+      } else {
+        $(event.target)
+          .closest('.btn--wishlist')
+          .removeClass('is-unactive un-favorited');
+        $(event.target).closest('.btn--wishlist').addClass('is-active pulse');
+      }
+    }
+  );
 });
