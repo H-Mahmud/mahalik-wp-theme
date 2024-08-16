@@ -1,6 +1,6 @@
 /**
  * Theme Name:        Mahalik
- * Theme URI:         https://github.com/awebse/mahalik
+ * Theme URI:         https://github.com/H-Mahmud/mahalik-wp-theme
  * Description:       WordPress WooCommerce Theme
  * Version:           1.0.0
  * Author:            Mahmudul Hasan
@@ -53,6 +53,7 @@
 .added_to_cart {
   display: none !important;
 }
+
 .btn--add-to-cart .loading.s-button-primary-outline:hover {
   background-color: #fff;
   border: 1px solid var(--color-primary-reverse);
@@ -66,6 +67,7 @@
 .s-button-loader.add-to-cart-loader {
   display: none;
 }
+
 a.loading .s-button-text .s-button-loader.add-to-cart-loader {
   display: block;
 }
@@ -74,6 +76,7 @@ a.loading .s-button-text .s-button-loader.add-to-cart-loader {
 .product-slider .swiper-container {
   overflow: hidden;
 }
+
 .product-slider .swiper-wrapper {
   height: 100%;
 }
@@ -89,6 +92,7 @@ a.loading .s-button-text .s-button-loader.add-to-cart-loader {
   background: #fff;
   margin-bottom: 30px;
 }
+
 .woocommerce-checkout #payment ul.payment_methods {
   border-bottom: unset;
 }
@@ -104,6 +108,7 @@ a.loading .s-button-text .s-button-loader.add-to-cart-loader {
 .woocommerce-checkout #payment div.payment_box {
   background-color: #fff;
 }
+
 #add_payment_method #payment div.payment_box,
 .woocommerce-cart #payment div.payment_box,
 .woocommerce-checkout #payment div.payment_box::before {
@@ -113,13 +118,16 @@ a.loading .s-button-text .s-button-loader.add-to-cart-loader {
 #place_order {
   color: var(--color-primary-l) !important;
 }
+
 .wc_payment_methods .wc_payment_method input[name='payment_method'] {
   display: none;
 }
+
 .woocommerce form .form-row {
   display: flex;
   flex-direction: column;
 }
+
 .woocommerce form .form-row .form-control {
   background-color: var(--color-white);
   border: 2px solid #efefef;
@@ -141,6 +149,7 @@ a.loading .s-button-text .s-button-loader.add-to-cart-loader {
 .woocommerce-SavedPaymentMethods-saveNew {
   display: block !important;
 }
+
 .woocommerce-SavedPaymentMethods-saveNew label {
   padding: 10px;
 }
